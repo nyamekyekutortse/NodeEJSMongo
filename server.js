@@ -25,7 +25,7 @@ app.set('view engine', 'ejs');
 
 /**Database connection */ 
 const { MongoClient } = require('mongodb');
-const templateSchema = require('./data/schemas/blankSchema.js');
+const tempSchema = require('./data/schemas/blankSchema.js');
 
 const uri = 'mongodb://localhost:27017'; // replace with your MongoDB connection string if needed, this is the default
 const client = new MongoClient(uri);
@@ -46,7 +46,7 @@ async function connectToMongoDB()
 }
 module.exports =
 {
-    publicDataBase,
+    databaseObject,
     connectToMongoDB
 }
 connectToMongoDB();

@@ -6,3 +6,6 @@ projectSetupPlain:
 	npm install mongoose
 	npm install body-parser
 	npm install --save-dev nodemon
+
+runServer: 
+	nodemon server.js
