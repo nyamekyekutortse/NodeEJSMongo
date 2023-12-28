@@ -1,0 +1,50 @@
+body
+{
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+header, 
+footer
+{
+    display: flex;
+    flex-direction: row;
+    background-color: greenyellow;
+    margin-top: -0.55vw;
+    width: 110%;
+    margin-left: -2%;
+}
+
+footer
+{
+    text-align: center;
+    justify-content: center;
+    margin-top: 5vh;
+}
+
+nav ul
+{
+    display: flex;
+    flex-direction: row;
+    gap: 0.75vw;
+    list-style: none;
+}
+
+nav ul li a
+{
+    text-decoration: none;
+    color: black;
+    font-size: 1.75vw;
+}
+
+#dataEntry
+{
+    display: flex;
+    flex-direction: column;
+    gap: 1.75vh;
+}
+
+#dataEntry label
+{
+    margin-right: 2vw;
+}

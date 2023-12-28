@@ -1,16 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/index"><%= className %></a>
+                </li>
+                <li>
+                    <a href="/donationScreen">Donation</a>
+                </li>
+                <li>
+                    <a href="/donationList">Search</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
     <main>
-        Template
+        <h1>Add a Donation</h1>
+        <form>
+            <span>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" style="margin-left: 1.5vw;">
+            </span>
+            <span>
+                <label for="phoneNumber">Phone:</label>
+                <input type="number" id="phoneNumber" style="margin-left: 1.35vw;"></label>
+            </span>
+            <span>
+                <label for="itemDonated">Item:</label>
+                <input type="text" id="itemDonated" name="itemDonated" style="margin-left: 2.05vw;">
+            </span>
+            <span>
+                <label for="itemQuantity">Quantity:</label>
+                <input type="number" id="itemQuantity" name="itemQuantity" style="margin-left: 0.25vw;">
+            </span>
+            <span class="buttonGroup">
+                <button onclick="submitForm()">Submit</button>
+                <button onclick="clearForm()">Clear</button>
+            </span>
+        </form>
     </main>
-    <script src="javascript/main.js"></script>
+    <footer>
+        <p>Copyright 2022 GMU</p>
+    </footer>
+    <script src="../../public/javascript/main.js"></script>
 </body>
-
 </html>

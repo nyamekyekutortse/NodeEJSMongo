@@ -12,6 +12,7 @@ const app = express();
 /**Setup port */
 const port = 8080;
 app.listen(port);
+console.log('Server started on port ' + port);
 
 // Render static files
 app.use(express.static('public'));
@@ -37,7 +38,7 @@ async function connectToMongoDB()
   {
     await client.connect();
     console.log('Connected to MongoDB');
-    databaseObject = client.db('local');
+    databaseObject = client.db('432Final');
   } 
   catch (error) 
   {
@@ -57,12 +58,53 @@ app.get('/', async function (req, res)
 {
     res.render('pages/index',
     {
-        title: 'Template'
+        className: 'SWE432',
     });
+});
+
+app.get('/donationScreen', async function (req, res)
+{
+    res.render('pages/donationScreen',
+    {
+        className: 'SWE432',
+    });
+});
+
+app.post('/donationSubmission', async function (req, res)
+{
+  donationDocs = databaseObject.collection('donations');
+  console.log("server side route in"); 
+  donationDocs.insertOne(req.body);
+		console.log("Playlist Created server side");
+		res.send(donationDocs.findOne({donationId: req.body.id}));
+})
+
+app.get('/donationList', async function (req, res)
+{
+    try {
+      console.log('Retrieving data from MongoDB');
+      const donationsCollection = databaseObject.collection('donations');
+      const donationsMade = await donationsCollection.find({}).toArray();
+      res.render('pages/donationList',
+      {
+          className: 'SWE432',
+          donationsMade: donationsMade
+      });
+    } 
+    catch (error) 
+    {
+      console.error('Error retrieving data from MongoDB', error);
+      res.status(500).send('Error retrieving data server side');
+    }
 });
 
 /** POST Routes */
 app.post('/', async function (req, res) 
 {
   // TODO: Add your code here for handling the POST request
+  donationDocs = databaseObject.collection('donations');
+  console.log("server side route in"); 
+  donationDocs.insertOne(req.body);
+	console.log("Playlist Created server side");
+	res.send(donationDocs.findOne({donationId: req.body.id}));
 });

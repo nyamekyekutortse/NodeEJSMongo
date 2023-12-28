@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/index">SWE432</a>
+                </li>
+                <li>
+                    <a href="/donationScreen">Donation</a>
+                </li>
+                <li>
+                    <a href="/donationList">Search</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Donation List</h1>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Item</th>
+                <th>Quantity</th>
+            </tr>
+            <!-- table content goes here -->
+            <tbody id = "tableBody">
+                <% for (var i = 0; i < donationsMade.length; i++){ %>
+                    <tr id = "<%= donationsMade[i].itemDonated %>" class="<%= donationsMade[i].itemDonated %>">
+                        <td><%= donationsMade[i].name %></td>
+                        <td><%= donationsMade[i].phoneNumber %></td>
+                        <td><%= donationsMade[i].itemDonated %></td>
+                        <td><%= donationsMade[i].quantityDonated %></td>
+                    </tr>
+                <% console.log(donationsMade.length) } %>
+            </tbody>
+
+        </table>
+        <h1>Find a Donation</h1>
+        <form>
+            <span>
+                <label for="search">Search:</label>
+                <input type="text" id="search" name="search" style="margin-left: 0.75vw;">
+            </span>
+        </form>
+        <span class="buttonGroup">
+            <button id="searchButton" onclick="search()">Search</button>
+            <button id="clearButton" onclick="searchReset()">Clear</button>
+        </span>
+    </main>
+    <footer>
+        <p>Copyright 2022 GMU</p>
+    </footer>
+    <script src="javascript/main.js"></script>
+</body>
+</html>

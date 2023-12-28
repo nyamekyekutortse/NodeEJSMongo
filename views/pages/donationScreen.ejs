@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
 <body>
@@ -11,20 +11,20 @@
         <nav>
             <ul>
                 <li>
-                    <a href="index.html">SWE432</a>
+                    <a href="/index">SWE432</a>
                 </li>
                 <li>
-                    <a href="donationScreen.html">Donation</a>
+                    <a href="/donationScreen">Donation</a>
                 </li>
                 <li>
-                    <a href="donationList.html">Search</a>
+                    <a href="/donationList">Search</a>
                 </li>
             </ul>
         </nav>
     </header>
     <main>
         <h1>Add a Donation</h1>
-        <form>
+        <span id = "dataEntry">
             <span>
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" style="margin-left: 1.5vw;">
@@ -42,14 +42,14 @@
                 <input type="number" id="itemQuantity" name="itemQuantity" style="margin-left: 0.25vw;">
             </span>
             <span class="buttonGroup">
-                <button onclick="submitForm()">Submit</button>
+                <button onclick="donate()">Submit</button>
                 <button onclick="clearForm()">Clear</button>
             </span>
-        </form>
+        </span>
     </main>
     <footer>
         <p>Copyright 2022 GMU</p>
     </footer>
-    <script src="../../public/javascript/main.js"></script>
+    <script src="javascript/main.js"></script>
 </body>
 </html>
